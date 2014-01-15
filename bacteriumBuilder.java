@@ -1,6 +1,7 @@
 package bacterium;
 
 
+import bacterium.bacteria;
 import repast.simphony.context.Context;
 import repast.simphony.context.DefaultContext;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
@@ -30,7 +31,7 @@ public class bacteriumBuilder implements ContextBuilder<Object> {
 		
 		NetworkBuilder<Object> netBuilder = new NetworkBuilder<Object>(
 				"growth network", context, true);
-		netBuilder.buildNetwork();
+		bacteria.phylogeny=netBuilder.buildNetwork();
 		
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder.createContinuousSpaceFactory(null);
 		ContinuousSpace <Object > space = spaceFactory.createContinuousSpace("space", context ,

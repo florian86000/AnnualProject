@@ -17,7 +17,7 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 
 public class bacteria {
-
+	static Network<Object> phylogeny;
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	private boolean moved;
@@ -58,8 +58,8 @@ public class bacteria {
 		catch (java.lang.NullPointerException e){
 			System.out.println("context : "+c+"\n"+"child : "+child);
 		}
-		Network<Object> net = (Network<Object>)c.getProjection("growth network");
-		net.addEdge(this, child);
+		//Network<Object> net = (Network<Object>)c.getProjection("growth network");
+		phylogeny.addEdge(this, child);
 		
 	}
 	
